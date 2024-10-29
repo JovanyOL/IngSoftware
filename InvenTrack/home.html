@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvenTrack - Ayuda y Soporte</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Logo InvenTrack" width="30" height="30" class="d-inline-block align-top">
+            InvenTrack
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i> Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-box"></i> Inventario</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-truck"></i> Proveedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a href="login.html" class="btn btn-outline-light"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido de la página de Ayuda -->
+<div class="container my-5">
+    <h1 class="text-center mb-4">Centro de Ayuda de InvenTrack</h1>
+
+    <!-- Barra de búsqueda -->
+    <div class="input-group mb-4">
+        <input type="text" class="form-control" placeholder="Buscar temas de ayuda..." aria-label="Buscar temas de ayuda">
+        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i> Buscar</button>
+    </div>
+
+    <!-- Accordion para Preguntas Frecuentes -->
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    ¿Cómo inicio sesión en InvenTrack?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Para iniciar sesión, haga clic en el botón "Iniciar Sesión" en la barra de navegación y luego ingrese su nombre de usuario y contraseña en el formulario de inicio de sesión.
+                </div>
+            </div>
+        </div>
+
+        <!-- Otras preguntas frecuentes pueden ir aquí -->
+    </div>
+
+    <!-- Sección de Soporte -->
+    <div class="mt-5">
+        <h2 class="text-center">¿Necesitas ayuda adicional? Contáctanos</h2>
+        <form action="enviar_soporte.php" method="POST" class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="col-md-6">
+                <label for="correo" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="col-12">
+                <label for="asunto" class="form-label">Asunto</label>
+                <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Ej. Problema al iniciar sesión" required>
+            </div>
+            <div class="col-12">
+                <label for="mensaje" class="form-label">Descripción del Problema</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Describe el problema o pregunta" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Solicitud de Soporte</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Página de Inicio de Sesión -->
+<div class="container my-5">
+    <h2 class="text-center">Inicio de Sesión</h2>
+    <form action="autenticar.php" method="POST" class="mt-4 mx-auto" style="max-width: 400px;">
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Tu usuario" required>
+        </div>
+        <div class="mb-3">
+            <label for="contraseña" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+    </form>
+    <div class="text-center mt-3">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+    </div>
+</div>
+
+<!-- Bootstrap y Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
