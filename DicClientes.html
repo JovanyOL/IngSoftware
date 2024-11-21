@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Proveedores - InvenTrack</title>
+    <title>Directorio de Clientes - InvenTrack</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome CSS -->
@@ -38,19 +38,19 @@
 
     <!-- Contenedor principal -->
     <div class="container mt-5">
-        <h2 class="text-center">Gestión de Proveedores</h2>
+        <h2 class="text-center">Directorio de Clientes</h2>
 
         <!-- Campo de búsqueda -->
         <div class="mb-4">
-            <input type="text" class="form-control" id="buscarProveedor" placeholder="Buscar proveedor...">
+            <input type="text" class="form-control" id="buscarCliente" placeholder="Buscar cliente...">
         </div>
 
-        <!-- Botón para agregar nuevo producto -->
+        <!-- Botón para agregar nuevo cliente -->
     <div class="text-right mb-4">
-        <a href="IngProveedor.html" class="btn btn-primary">Agregar Nuevo Proveedor</a>
+        <a href="clientes.html" class="btn btn-primary">Agregar Nuevo Cliente</a>
     </div>
 
-        <!-- Tabla de proveedores -->
+        <!-- Tabla de clientes -->
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="thead-light">
@@ -64,63 +64,63 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Ejemplo de fila de proveedor -->
+                    <!-- Ejemplo de fila de cliente -->
                     <tr>
                         <td>1</td>
-                        <td>Martinez</td>
+                        <td>Cliente Ejemplo</td>
                         <td>+123456789</td>
-                        <td>ejemplo@proveedor1.com</td>
+                        <td>cliente@ejemplo.com</td>
                         <td>Calle Ejemplo 123</td>
                         <td>
                             <button class="btn btn-info btn-sm">
                                 <i class="fas fa-edit"></i> Editar
                             </button>
-                            <button class="btn btn-danger btn-sm" onclick="eliminarProveedor(1)">
+                            <button class="btn btn-danger btn-sm" onclick="eliminarCliente(1)">
                                 <i class="fas fa-trash"></i> Eliminar
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Panasonic</td>
+                        <td>Cliente Ejemplo</td>
                         <td>+123456789</td>
-                        <td>ejemplo@proveedor2.com</td>
-                        <td>Calle Ejemplo 456</td>
+                        <td>cliente@ejemplo.com</td>
+                        <td>Calle Ejemplo 123</td>
                         <td>
                             <button class="btn btn-info btn-sm">
                                 <i class="fas fa-edit"></i> Editar
                             </button>
-                            <button class="btn btn-danger btn-sm" onclick="eliminarProveedor(2)">
+                            <button class="btn btn-danger btn-sm" onclick="eliminarCliente(2)">
                                 <i class="fas fa-trash"></i> Eliminar
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>PingIdentity</td>
+                        <td>Cliente Ejemplo</td>
                         <td>+123456789</td>
-                        <td>ejemplo@proveedor3.com</td>
-                        <td>Calle Ejemplo 789</td>
+                        <td>cliente@ejemplo.com</td>
+                        <td>Calle Ejemplo 123</td>
                         <td>
                             <button class="btn btn-info btn-sm">
                                 <i class="fas fa-edit"></i> Editar
                             </button>
-                            <button class="btn btn-danger btn-sm" onclick="eliminarProveedor(3)">
+                            <button class="btn btn-danger btn-sm" onclick="eliminarCliente(3)">
                                 <i class="fas fa-trash"></i> Eliminar
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>Ryzen</td>
+                        <td>Cliente Ejemplo</td>
                         <td>+123456789</td>
-                        <td>ejemplo@proveedor4.com</td>
-                        <td>Calle Ejemplo 012</td>
+                        <td>cliente@ejemplo.com</td>
+                        <td>Calle Ejemplo 123</td>
                         <td>
                             <button class="btn btn-info btn-sm">
                                 <i class="fas fa-edit"></i> Editar
                             </button>
-                            <button class="btn btn-danger btn-sm" onclick="eliminarProveedor(4)">
+                            <button class="btn btn-danger btn-sm" onclick="eliminarCliente(4)">
                                 <i class="fas fa-trash"></i> Eliminar
                             </button>
                         </td>
@@ -130,44 +130,11 @@
         </div>
     </div>
 
-    <!-- Modal para agregar nuevo proveedor -->
-    <div class="modal fade" id="agregarProveedorModal" tabindex="-1" aria-labelledby="agregarProveedorLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="agregarProveedorLabel">Agregar Nuevo Proveedor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="guardar_proveedor.php" method="post">
-                        <div class="form-group mb-3">
-                            <label for="nombre">Nombre del Proveedor</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="direccion">Dirección</label>
-                            <textarea class="form-control" id="direccion" name="direccion" rows="3" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Guardar Proveedor</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <!-- Script para búsqueda -->
     <script>
-        document.getElementById('buscarProveedor').addEventListener('input', function () {
+        document.getElementById('buscarCliente').addEventListener('input', function () {
             let filter = this.value.toLowerCase();
             let rows = document.querySelectorAll('tbody tr');
             rows.forEach(row => {
@@ -176,14 +143,13 @@
             });
         });
 
-        function eliminarProveedor(id) {
-            if (confirm("¿Estás seguro de que deseas eliminar este proveedor?")) {
+        function eliminarCliente(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar este cliente?")) {
                 // Aquí podrías hacer una llamada AJAX al backend para eliminar
-                alert(`Proveedor con ID ${id} eliminado.`);
+                alert(`Cliente con ID ${id} eliminado.`);
                 location.reload(); // Temporalmente recargamos la página
             }
         }
     </script>
 </body>
 </html>
-
